@@ -6,6 +6,9 @@ class DiscountCalculator
 {
     public function calculateDiscount(float $totalAmount, bool $isVipCustomer): float
     {
+        if($totalAmount <= 100) {
+            return 0;
+        }
         // Remise de base de 10% si le montant est supérieur à 100 €
         $discount = ($totalAmount >= 100) ? $totalAmount * 0.10 : 0;
 
